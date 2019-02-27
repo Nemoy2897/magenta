@@ -191,7 +191,7 @@ def train(train_dir,
 
       logging_dict = {'global_step': model.global_step,
                       'loss': model.loss}
-
+      print("logging global step: ",logging_dict['global_step']," loss at this point: ",logging['loss']," \n")
       hooks.append(tf.train.LoggingTensorHook(logging_dict, every_n_iter=100))
       if num_steps:
         hooks.append(tf.train.StopAtStepHook(last_step=num_steps))
